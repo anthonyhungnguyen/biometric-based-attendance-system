@@ -4,10 +4,6 @@ This is the capstone project: Facial Recognition Attendance System
 
 [![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://34.126.168.244)
 [![GitHub release](https://img.shields.io/github/release/Naereen/StrapDown.js.svg)](https://github.com/anthonyhungnguyen/capstone-project)
-![example workflow](https://github.com/anthonyhungnguyen/capstone-project/actions/workflows/backend-build.yml/badge.svg)
-![example workflow](https://github.com/anthonyhungnguyen/capstone-project/actions/workflows/frontend-build.yml/badge.svg)
-![example workflow](https://github.com/anthonyhungnguyen/capstone-project/actions/workflows/faiss-buid.yml/badge.svg)
-![example workflow](https://github.com/anthonyhungnguyen/capstone-project/actions/workflows/kafka-setup.yml/badge.svg)
 
 Made by:
 - Anthony Nguyen
@@ -32,12 +28,14 @@ The system consists of several microservices:
 - FAISS Vector Search Engine
 - Kafka Message Queue
 - MySQL Database
+- IOT Attendance Devices
 
 ### System Architecture Diagram
 ```mermaid
 graph TD
     Client[Web Browser] --> Frontend[React Frontend]
-    Frontend --> Backend[FastAPI Backend]
+    IOT[IOT Devices] --> Backend[FastAPI Backend]
+    Frontend --> Backend
     Backend --> FAISS[FAISS Vector Search]
     Backend --> Kafka[Kafka Message Queue]
     Backend --> DB[(MySQL)]
@@ -49,13 +47,6 @@ graph TD
         Kafka
         DB
     end
-
-    style Client fill:#f9f,stroke:#333,stroke-width:2px
-    style Frontend fill:#bbf,stroke:#333,stroke-width:2px
-    style Backend fill:#bfb,stroke:#333,stroke-width:2px
-    style FAISS fill:#fbf,stroke:#333,stroke-width:2px
-    style Kafka fill:#ffb,stroke:#333,stroke-width:2px
-    style DB fill:#bff,stroke:#333,stroke-width:2px
 ```
 
 ## Prerequisites
